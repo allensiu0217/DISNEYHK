@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>香港迪士尼 3 歲幼兒半日遊指南 (不刺激版)</title>
+    <title>香港迪士尼 3 歲幼兒半日遊指南 (2026/01/31版)</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome -->
@@ -47,8 +47,8 @@
                 border: 1px solid #ddd;
                 box-shadow: none;
             }
-            .map-container {
-                page-break-before: always;
+            .map-container, .schedule-container {
+                page-break-inside: avoid;
             }
         }
         
@@ -59,6 +59,9 @@
         .map-point:hover {
             transform: scale(1.1);
         }
+        .schedule-row:nth-child(even) {
+            background-color: #f9fafb;
+        }
     </style>
 </head>
 <body class="text-gray-800">
@@ -67,37 +70,52 @@
     <nav class="bg-purple-600 text-white p-4 shadow-lg sticky top-0 z-50">
         <div class="container mx-auto flex justify-between items-center">
             <h1 class="text-xl font-bold"><i class="fas fa-castle mr-2"></i>迪士尼幼兒半日遊</h1>
-            <button onclick="window.print()" class="no-print bg-white text-purple-700 px-4 py-2 rounded-full font-bold hover:bg-yellow-300 transition shadow-md">
-                <i class="fas fa-file-pdf mr-1"></i> 儲存為 PDF
-            </button>
+            <div class="flex gap-2">
+                 <span class="bg-purple-700 px-3 py-1 rounded text-xs flex items-center">
+                    <i class="fas fa-calendar-alt mr-1"></i> 2026/01/31
+                 </span>
+                <button onclick="window.print()" class="no-print bg-white text-purple-700 px-4 py-1 rounded-full font-bold hover:bg-yellow-300 transition shadow-md text-sm">
+                    <i class="fas fa-file-pdf mr-1"></i> 存為 PDF
+                </button>
+            </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <header class="relative bg-gradient-to-b from-purple-100 to-pink-50 pt-10 pb-16 text-center px-4">
+    <header class="relative bg-gradient-to-b from-purple-100 to-pink-50 pt-8 pb-12 text-center px-4">
         <h2 class="text-3xl md:text-5xl font-bold text-purple-800 mb-2 disney-font">夢幻親子時光</h2>
-        <p class="text-lg text-gray-600 mb-6">專為 3 歲寶貝設計的溫和行程 (11:00 - 18:00)</p>
+        <p class="text-lg text-gray-600 mb-6">3 歲寶貝專屬行程 (11:00 - 18:00)</p>
         
-        <!-- Key Highlight Box -->
-        <div class="max-w-3xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden border-l-8 border-yellow-400">
-            <div class="p-6 md:flex items-center">
-                <div class="md:w-1/3 mb-4 md:mb-0">
-                    <img src="https://placehold.co/400x300/4F46E5/FFFFFF?text=Mickey's+PhilharMagic" alt="米奇幻想曲" class="rounded-lg shadow-md w-full object-cover">
+        <!-- Official Schedule Data from Screenshot -->
+        <div class="schedule-container max-w-4xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200 mb-8 text-left">
+            <div class="bg-blue-600 text-white p-3 font-bold flex justify-between items-center">
+                <span><i class="fas fa-clock mr-2"></i>當日表演時間表 (2026/01/31)</span>
+                <span class="text-xs bg-blue-700 px-2 py-1 rounded">資料來源：官方官網</span>
+            </div>
+            <div class="p-4 grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                <!-- Show 1 -->
+                <div class="border-b md:border-b-0 md:border-r border-gray-100 pb-2 md:pb-0">
+                    <h4 class="font-bold text-purple-700 mb-1">🏰 迪士尼好友 Live! 城堡派對</h4>
+                    <p class="text-gray-600">11:15, 13:35, <span class="bg-yellow-200 px-1 rounded font-bold">15:00 (行程選定)</span>, 16:15, 17:45</p>
                 </div>
-                <div class="md:w-2/3 md:pl-6 text-left">
-                    <h3 class="text-2xl font-bold text-indigo-700 mb-2">⭐ 重點推薦：米奇幻想曲</h3>
-                    <div class="grid grid-cols-2 gap-4 text-sm">
-                        <div class="bg-indigo-50 p-2 rounded">
-                            <i class="fas fa-clock text-indigo-500 mr-2"></i>
-                            <span class="font-bold">場次頻率：</span><br>每 10-15 分鐘一場 (循環演出)
-                        </div>
-                        <div class="bg-indigo-50 p-2 rounded">
-                            <i class="fas fa-snowflake text-indigo-500 mr-2"></i>
-                            <span class="font-bold">環境：</span><br>最強冷氣、4D 感官體驗
-                        </div>
-                    </div>
-                    <p class="text-gray-500 text-xs mt-2">📍 位置：幻想世界 | 💡 攻略：隨到隨排，適合下午避暑</p>
+                <!-- Show 2 -->
+                <div class="border-b md:border-b-0 border-gray-100 pb-2 md:pb-0">
+                    <h4 class="font-bold text-pink-600 mb-1">🎉 迪士尼好友巡遊派對</h4>
+                    <p class="text-gray-600">12:45, <span class="bg-yellow-200 px-1 rounded font-bold">17:00 (行程選定)</span></p>
                 </div>
+                <!-- Show 3 -->
+                <div class="border-b md:border-b-0 md:border-r border-gray-100 pb-2 md:pb-0">
+                    <h4 class="font-bold text-indigo-700 mb-1">📖 迪士尼魔法書房</h4>
+                    <p class="text-gray-600">11:15, 12:30, 13:45, 16:30, 17:45, 19:00</p>
+                </div>
+                <!-- Show 4 -->
+                <div>
+                    <h4 class="font-bold text-orange-600 mb-1">🦁 獅子王慶典</h4>
+                    <p class="text-gray-600">12:30, 14:30, 17:00, 18:30</p>
+                </div>
+            </div>
+             <div class="bg-gray-50 p-2 text-xs text-center text-gray-500 border-t">
+                *森林小天地：11:30 - 19:00 | 泰山樹屋：暫停開放
             </div>
         </div>
     </header>
@@ -108,54 +126,55 @@
         <!-- Interactive Map Visualization -->
         <section class="mb-16 map-container">
             <h2 class="text-3xl font-bold text-center text-gray-800 mb-8"><i class="fas fa-map-marked-alt text-pink-500 mr-2"></i>行程地圖概覽</h2>
+            
             <div class="relative bg-green-50 rounded-3xl p-4 border-4 border-green-200 aspect-[16/9] md:aspect-[2/1] overflow-hidden max-w-4xl mx-auto shadow-inner">
                 <!-- Map Background Elements -->
                 <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#6B7280 1px, transparent 1px); background-size: 20px 20px;"></div>
                 
                 <!-- Castle Center -->
                 <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center z-10">
-                    <i class="fas fa-chess-rook text-6xl text-pink-400 opacity-80"></i>
-                    <p class="font-bold text-pink-600">城堡</p>
+                    <i class="fas fa-chess-rook text-5xl md:text-6xl text-pink-400 opacity-80"></i>
+                    <p class="font-bold text-pink-600 text-xs md:text-sm">奇妙夢想城堡</p>
                 </div>
 
                 <!-- Locations -->
                 <!-- 1. Fantasyland -->
-                <div class="absolute top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center map-point cursor-pointer">
-                    <div class="bg-purple-600 text-white w-8 h-8 rounded-full flex items-center justify-center mx-auto shadow-lg border-2 border-white font-bold">1</div>
-                    <div class="bg-white px-2 py-1 rounded text-xs font-bold shadow mt-1 whitespace-nowrap">幻想世界<br>(小小世界/旋轉木馬)</div>
+                <div class="absolute top-[20%] left-1/2 transform -translate-x-1/2 text-center map-point cursor-pointer z-20">
+                    <div class="bg-purple-600 text-white w-6 h-6 md:w-8 md:h-8 rounded-full flex items-center justify-center mx-auto shadow-lg border-2 border-white font-bold text-xs md:text-base">1</div>
+                    <div class="bg-white px-2 py-1 rounded text-xs font-bold shadow mt-1 whitespace-nowrap">幻想世界區<br><span class="text-[10px] text-gray-500">(小小世界/旋轉木馬)</span></div>
                 </div>
 
                 <!-- 2. Banquet Hall -->
-                <div class="absolute top-1/3 left-[65%] text-center map-point">
-                    <div class="bg-yellow-500 text-white w-8 h-8 rounded-full flex items-center justify-center mx-auto shadow-lg border-2 border-white font-bold">2</div>
+                <div class="absolute top-[30%] left-[68%] text-center map-point z-20">
+                    <div class="bg-yellow-500 text-white w-6 h-6 md:w-8 md:h-8 rounded-full flex items-center justify-center mx-auto shadow-lg border-2 border-white font-bold text-xs md:text-base">2</div>
                     <div class="bg-white px-2 py-1 rounded text-xs font-bold shadow mt-1 whitespace-nowrap">皇室宴會廳</div>
                 </div>
 
                 <!-- 3. PhilharMagic -->
-                <div class="absolute top-[40%] left-[35%] text-center map-point">
-                    <div class="bg-indigo-600 text-white w-8 h-8 rounded-full flex items-center justify-center mx-auto shadow-lg border-2 border-white font-bold">3</div>
+                <div class="absolute top-[35%] left-[32%] text-center map-point z-20">
+                    <div class="bg-indigo-600 text-white w-6 h-6 md:w-8 md:h-8 rounded-full flex items-center justify-center mx-auto shadow-lg border-2 border-white font-bold text-xs md:text-base">3</div>
                     <div class="bg-white px-2 py-1 rounded text-xs font-bold shadow mt-1 whitespace-nowrap text-indigo-700">米奇幻想曲</div>
                 </div>
 
                 <!-- 4. Adventureland -->
-                <div class="absolute bottom-1/4 left-[20%] text-center map-point">
-                    <div class="bg-green-600 text-white w-8 h-8 rounded-full flex items-center justify-center mx-auto shadow-lg border-2 border-white font-bold">4</div>
-                    <div class="bg-white px-2 py-1 rounded text-xs font-bold shadow mt-1 whitespace-nowrap">探險世界<br>(森林河流)</div>
+                <div class="absolute bottom-[25%] left-[20%] text-center map-point z-20">
+                    <div class="bg-green-600 text-white w-6 h-6 md:w-8 md:h-8 rounded-full flex items-center justify-center mx-auto shadow-lg border-2 border-white font-bold text-xs md:text-base">4</div>
+                    <div class="bg-white px-2 py-1 rounded text-xs font-bold shadow mt-1 whitespace-nowrap">探險世界<br><span class="text-[10px] text-gray-500">(森林河流)</span></div>
                 </div>
 
                 <!-- 5. Toy Story -->
-                <div class="absolute top-[20%] left-[15%] text-center map-point">
-                    <div class="bg-orange-500 text-white w-8 h-8 rounded-full flex items-center justify-center mx-auto shadow-lg border-2 border-white font-bold">5</div>
-                    <div class="bg-white px-2 py-1 rounded text-xs font-bold shadow mt-1 whitespace-nowrap">反斗奇兵<br>(彈弓狗)</div>
+                <div class="absolute top-[15%] left-[10%] text-center map-point z-20">
+                    <div class="bg-orange-500 text-white w-6 h-6 md:w-8 md:h-8 rounded-full flex items-center justify-center mx-auto shadow-lg border-2 border-white font-bold text-xs md:text-base">5</div>
+                    <div class="bg-white px-2 py-1 rounded text-xs font-bold shadow mt-1 whitespace-nowrap">反斗奇兵<br><span class="text-[10px] text-gray-500">(彈弓狗)</span></div>
                 </div>
 
                 <!-- 6. Main Street -->
-                <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-center map-point">
-                    <div class="bg-blue-600 text-white w-8 h-8 rounded-full flex items-center justify-center mx-auto shadow-lg border-2 border-white font-bold">6</div>
-                    <div class="bg-white px-2 py-1 rounded text-xs font-bold shadow mt-1 whitespace-nowrap">美國小鎮大街</div>
+                <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-center map-point z-20">
+                    <div class="bg-blue-600 text-white w-6 h-6 md:w-8 md:h-8 rounded-full flex items-center justify-center mx-auto shadow-lg border-2 border-white font-bold text-xs md:text-base">6</div>
+                    <div class="bg-white px-2 py-1 rounded text-xs font-bold shadow mt-1 whitespace-nowrap">美國小鎮大街<br><span class="text-[10px] text-gray-500">(巡遊/購物)</span></div>
                 </div>
             </div>
-            <p class="text-center text-gray-500 text-sm mt-4">此地圖為相對位置示意圖，請配合官方 APP 使用</p>
+            <p class="text-center text-gray-500 text-sm mt-4">註：此地圖為路線示意，實際導航請使用官方 APP</p>
         </section>
 
         <!-- Timeline -->
@@ -170,10 +189,10 @@
                 </div>
                 <div class="order-1 md:w-5/12 bg-white rounded-xl shadow-lg px-6 py-4 card w-full">
                     <h3 class="font-bold text-gray-800 text-xl mb-3">🏰 幻想世界：溫和啟航</h3>
-                    <img src="https://placehold.co/600x300/e0b0ff/ffffff?text=It's+a+Small+World+%2B+Carousel" class="w-full h-32 object-cover rounded-lg mb-3" alt="小小世界與旋轉木馬">
+                    <img src="https://placehold.co/600x300/e0b0ff/ffffff?text=Fantasyland" class="w-full h-32 object-cover rounded-lg mb-3" alt="小小世界與旋轉木馬">
                     <ul class="text-sm text-gray-600 space-y-2">
-                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i><b>小小世界</b>：3歲最愛，坐船吹冷氣，無離心力。</li>
-                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i><b>灰姑娘旋轉木馬</b>：經典打卡位，速度緩慢。</li>
+                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i><b>小小世界</b>：3歲最愛，坐船吹冷氣。</li>
+                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i><b>灰姑娘旋轉木馬</b>：經典打卡位。</li>
                         <li><i class="fas fa-check-circle text-green-500 mr-2"></i><b>小飛象旋轉世界</b>：可自行控制高低。</li>
                     </ul>
                 </div>
@@ -187,10 +206,10 @@
                 </div>
                 <div class="order-1 md:w-5/12 bg-white rounded-xl shadow-lg px-6 py-4 card w-full">
                     <h3 class="font-bold text-gray-800 text-xl mb-3">🍴 午餐：皇室宴會廳</h3>
-                    <img src="https://placehold.co/600x300/fcd34d/ffffff?text=Royal+Banquet+Hall" class="w-full h-32 object-cover rounded-lg mb-3" alt="皇室宴會廳">
-                    <p class="text-sm text-gray-600 mb-2">米奇幻想曲對面。城堡風格室內環境，冷氣充足。</p>
+                    <img src="https://placehold.co/600x300/fcd34d/ffffff?text=Lunch+Time" class="w-full h-32 object-cover rounded-lg mb-3" alt="皇室宴會廳">
+                    <p class="text-sm text-gray-600 mb-2">米奇幻想曲對面。城堡風格，冷氣充足。</p>
                     <div class="bg-yellow-50 p-2 rounded text-xs text-yellow-800">
-                        <i class="fas fa-utensils mr-1"></i> 推薦：日式拉麵、皇室焗飯 (份量足夠親子分食)
+                        <i class="fas fa-exclamation-circle mr-1"></i> 注意：避開 12:45 的巡遊，專心享受午餐避暑。
                     </div>
                 </div>
             </div>
@@ -203,7 +222,7 @@
                 </div>
                 <div class="order-1 md:w-5/12 bg-white rounded-xl shadow-lg px-6 py-4 card border-l-4 border-indigo-500 w-full">
                     <h3 class="font-bold text-indigo-700 text-xl mb-3">🎬 必看：米奇幻想曲 (4D)</h3>
-                    <img src="https://placehold.co/600x300/4338ca/ffffff?text=Mickey's+PhilharMagic+Show" class="w-full h-32 object-cover rounded-lg mb-3" alt="米奇幻想曲">
+                    <img src="https://placehold.co/600x300/4338ca/ffffff?text=Mickey's+PhilharMagic" class="w-full h-32 object-cover rounded-lg mb-3" alt="米奇幻想曲">
                     <p class="text-sm text-gray-600 mb-2">全家休息的最佳時間。戴上 3D 眼鏡，感受唐老鴨帶來的魔法。</p>
                     <div class="flex items-center text-xs bg-indigo-100 text-indigo-800 p-2 rounded">
                         <i class="fas fa-info-circle mr-2"></i>
@@ -219,10 +238,11 @@
                     15:00
                 </div>
                 <div class="order-1 md:w-5/12 bg-white rounded-xl shadow-lg px-6 py-4 card w-full">
-                    <h3 class="font-bold text-gray-800 text-xl mb-3">🎉 巡遊與表演</h3>
-                    <img src="https://placehold.co/600x300/ec4899/ffffff?text=Disney+Parade" class="w-full h-32 object-cover rounded-lg mb-3" alt="迪士尼巡遊">
-                    <p class="text-sm text-gray-600">前往 **城堡前方** 或 **美國小鎮大街**。</p>
-                    <p class="text-xs text-red-500 mt-1 font-bold"><i class="fas fa-exclamation-triangle mr-1"></i>請提前 20 分鐘打開 App 確認當日確切時間。</p>
+                    <h3 class="font-bold text-gray-800 text-xl mb-3">👑 城堡派對 (Live!)</h3>
+                    <img src="https://placehold.co/600x300/ec4899/ffffff?text=Castle+Show+15:00" class="w-full h-32 object-cover rounded-lg mb-3" alt="迪士尼好友Live! 城堡派對">
+                    <p class="text-sm text-gray-600">**「迪士尼好友 Live! 城堡派對」**</p>
+                    <p class="text-xs text-gray-500 mt-1">地點：奇妙夢想城堡舞台</p>
+                    <p class="text-xs text-red-500 mt-1 font-bold"><i class="fas fa-clock mr-1"></i>官方場次：15:00 (請提早15分鐘佔位)</p>
                 </div>
             </div>
 
@@ -235,12 +255,12 @@
                 <div class="order-1 md:w-5/12 bg-white rounded-xl shadow-lg px-6 py-4 card w-full">
                     <h3 class="font-bold text-gray-800 text-xl mb-3">🌳 探險與反斗世界</h3>
                     <div class="flex space-x-2 mb-3">
-                         <img src="https://placehold.co/300x200/059669/ffffff?text=Jungle+River" class="w-1/2 h-20 object-cover rounded" alt="森林河流">
+                         <img src="https://placehold.co/300x200/059669/ffffff?text=Jungle" class="w-1/2 h-20 object-cover rounded" alt="森林河流">
                          <img src="https://placehold.co/300x200/f97316/ffffff?text=Slinky+Dog" class="w-1/2 h-20 object-cover rounded" alt="彈弓狗">
                     </div>
                     <ul class="text-sm text-gray-600 space-y-2">
-                        <li><i class="fas fa-map-marker-alt text-green-500 mr-2"></i><b>森林河流之旅</b>：看噴水大象，船長講解幽默。</li>
-                        <li><i class="fas fa-map-marker-alt text-orange-500 mr-2"></i><b>轉轉彈弓狗</b>：反斗奇兵區最溫和設施，平穩有趣。</li>
+                        <li><i class="fas fa-map-marker-alt text-green-500 mr-2"></i><b>森林河流之旅</b>：看噴水大象。(*泰山樹屋暫停)</li>
+                        <li><i class="fas fa-map-marker-alt text-orange-500 mr-2"></i><b>轉轉彈弓狗</b>：反斗奇兵區最溫和設施。</li>
                     </ul>
                 </div>
             </div>
@@ -249,17 +269,57 @@
             <div class="mb-8 flex justify-between flex-col md:flex-row-reverse items-center w-full">
                 <div class="order-1 md:w-5/12"></div>
                 <div class="z-20 flex items-center order-1 bg-blue-600 shadow-xl w-12 h-12 rounded-full justify-center text-white font-bold text-lg mb-4 md:mb-0">
-                    17:30
+                    17:00
                 </div>
                 <div class="order-1 md:w-5/12 bg-white rounded-xl shadow-lg px-6 py-4 card w-full">
-                    <h3 class="font-bold text-gray-800 text-xl mb-3">🛍️ 美國小鎮大街</h3>
-                    <img src="https://placehold.co/600x300/2563eb/ffffff?text=Main+Street+USA" class="w-full h-32 object-cover rounded-lg mb-3" alt="美國小鎮大街">
-                    <p class="text-sm text-gray-600">最後的購物時間！購買氣球、米奇耳朵。</p>
-                    <p class="text-sm text-purple-600 font-bold mt-2">📸 必做：在晚霞中的城堡前拍全家福。</p>
+                    <h3 class="font-bold text-blue-800 text-xl mb-3">🎉 巡遊：迪士尼好友派對</h3>
+                    <img src="https://placehold.co/600x300/2563eb/ffffff?text=Parade+17:00" class="w-full h-32 object-cover rounded-lg mb-3" alt="迪士尼好友巡遊派對">
+                    <div class="bg-blue-50 p-2 rounded text-sm text-blue-900 border-l-4 border-blue-500">
+                        <i class="fas fa-flag mr-2"></i><b>官方時間：17:00</b>
+                    </div>
+                    <p class="text-sm text-gray-600 mt-2">地點：巡遊路線（通常由幻想世界往美國小鎮大街）</p>
+                    <p class="text-sm text-purple-600 font-bold mt-2">✨ 完美句點：看完巡遊後購物/離開。</p>
                 </div>
             </div>
 
         </div>
+
+        <!-- Extra Recommendations (Plan B) -->
+        <section class="mt-12 bg-purple-50 p-6 rounded-2xl shadow-inner border border-purple-100">
+            <h3 class="text-xl font-bold mb-6 text-center text-purple-800"><i class="fas fa-star text-yellow-400 mr-2"></i>額外推薦：適合 3 歲幼兒的備案 (Plan B)</h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Option 1 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
+                    <img src="https://placehold.co/400x250/5b21b6/ffffff?text=Wondrous+Book" class="w-full h-40 object-cover" alt="迪士尼魔法書房">
+                    <div class="p-4">
+                        <h4 class="font-bold text-gray-800 mb-1">📖 迪士尼魔法書房</h4>
+                        <p class="text-xs text-gray-500 mb-2"><i class="fas fa-map-marker-alt mr-1"></i>幻想世界</p>
+                        <p class="text-sm text-gray-600">約 28 分鐘的現場音樂劇。有艾莎、米奇、高飛演唱，舞台效果極佳，小孩會非常投入。</p>
+                    </div>
+                </div>
+
+                <!-- Option 2 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
+                    <img src="https://placehold.co/400x250/f472b6/ffffff?text=Duffy+Play+House" class="w-full h-40 object-cover" alt="Duffy and Friends Play House">
+                    <div class="p-4">
+                        <h4 class="font-bold text-gray-800 mb-1">🧸 Duffy and Friends Play House</h4>
+                        <p class="text-xs text-gray-500 mb-2"><i class="fas fa-map-marker-alt mr-1"></i>美國小鎮大街</p>
+                        <p class="text-sm text-gray-600">如果小朋友喜歡 Duffy 熊或 LinaBell，這裡可以直接排隊互動拍照（香港迪士尼特色）。</p>
+                    </div>
+                </div>
+
+                <!-- Option 3 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
+                    <img src="https://placehold.co/400x250/d97706/ffffff?text=Lion+King" class="w-full h-40 object-cover" alt="獅子王慶典">
+                    <div class="p-4">
+                        <h4 class="font-bold text-gray-800 mb-1">🦁 獅子王慶典</h4>
+                        <p class="text-xs text-gray-500 mb-2"><i class="fas fa-map-marker-alt mr-1"></i>探險世界</p>
+                        <p class="text-sm text-gray-600">大型歌舞劇，有巨大的動物花車和火舞，視覺效果震撼。適合喜歡動物的小朋友。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <!-- Checklist -->
         <section class="mt-12 bg-white p-6 rounded-2xl shadow-lg no-print">
@@ -273,17 +333,17 @@
                     </div>
                 </div>
                 <div class="flex items-center p-3 bg-gray-50 rounded-lg">
-                    <i class="fas fa-tint text-2xl text-blue-500 mr-3"></i>
+                    <i class="fas fa-ban text-2xl text-red-500 mr-3"></i>
                     <div>
-                        <p class="font-bold">自備水壺</p>
-                        <p class="text-xs text-gray-500">園區內有多處飲水機</p>
+                        <p class="font-bold">設施暫停注意</p>
+                        <p class="text-xs text-gray-500">泰山樹屋 (暫停開放)</p>
                     </div>
                 </div>
                 <div class="flex items-center p-3 bg-gray-50 rounded-lg">
                     <i class="fas fa-mobile-alt text-2xl text-purple-500 mr-3"></i>
                     <div>
-                        <p class="font-bold">下載官方 APP</p>
-                        <p class="text-xs text-gray-500">查閱即時排隊時間</p>
+                        <p class="font-bold">官方 APP</p>
+                        <p class="text-xs text-gray-500">隨時確認時間變動</p>
                     </div>
                 </div>
             </div>
@@ -293,7 +353,6 @@
 
     <footer class="bg-gray-800 text-white text-center py-6 mt-12 no-print">
         <p class="text-sm opacity-70">祝您和寶貝在香港迪士尼度過奇妙的一天！✨</p>
-        <p class="text-xs opacity-50 mt-2">Disclaimer: This is a suggested itinerary guide. Please refer to the official HK Disneyland App for real-time schedules.</p>
     </footer>
 
 </body>
