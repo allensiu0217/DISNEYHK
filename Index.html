@@ -1,250 +1,299 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-HK">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>重返生命樹下愛的初心 - 雅歌靈修指引</title>
+    <title>香港迪士尼 3 歲幼兒半日遊指南 (不刺激版)</title>
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+    
     <style>
         body {
             font-family: 'Noto Sans TC', sans-serif;
-            background-color: #fdfbf7; /* Creamy background */
-            color: #4a4a4a;
-            line-height: 1.8;
+            background-color: #fdf2f8; /* Pink-50 */
         }
-        h1, h2, h3, .scripture-text {
-            font-family: 'Noto Serif TC', serif;
+        .disney-font {
+            font-family: 'Georgia', serif;
         }
-        .container-custom {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 1rem;
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: #e5e7eb;
+            transform: translateX(-50%);
         }
-        .card {
-            background-color: white;
-            border-radius: 16px;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
-            margin-bottom: 2.5rem;
-            padding: 2.5rem;
-            border-top: 5px solid #a3b18a; /* Sage Green */
+        @media (max-width: 768px) {
+            .timeline-line {
+                left: 20px;
+            }
         }
-        .scripture-box {
-            background-color: #f4f6f4;
-            border-left: 4px solid #588157;
-            padding: 1.5rem;
-            margin: 1.5rem 0;
-            font-size: 1.15rem;
-            color: #2f3e46;
-            font-style: italic;
+        /* Print Styles */
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+            body {
+                background-color: white;
+                -webkit-print-color-adjust: exact;
+            }
+            .card {
+                break-inside: avoid;
+                border: 1px solid #ddd;
+                box-shadow: none;
+            }
+            .map-container {
+                page-break-before: always;
+            }
         }
-        .insight-box {
-            background-color: #fffaf0; /* Light yellow/warm */
-            border: 1px solid #e2d1c3;
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin-top: 1rem;
+        
+        /* Stylized Map Points */
+        .map-point {
+            transition: all 0.3s ease;
         }
-        .insight-title {
-            color: #bc6c25;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            display: flex;
-            align-items: center;
-        }
-        .reflection-input {
-            width: 100%;
-            min-height: 140px;
-            padding: 1rem;
-            border: 1px solid #d1d5db;
-            border-radius: 8px;
-            margin-top: 1.5rem;
-            font-family: 'Noto Sans TC', sans-serif;
-            background-color: #ffffff;
-            transition: all 0.3s;
-        }
-        .reflection-input:focus {
-            outline: none;
-            border-color: #588157;
-            ring: 2px solid #a3b18a;
-            box-shadow: 0 0 0 3px rgba(163, 177, 138, 0.2);
-        }
-        .step-badge {
-            display: inline-block;
-            background-color: #588157;
-            color: white;
-            padding: 0.25rem 1rem;
-            border-radius: 9999px;
-            font-size: 0.875rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            letter-spacing: 0.05em;
-        }
-        .divider {
-            height: 1px;
-            background: linear-gradient(to right, transparent, #d1d5db, transparent);
-            margin: 3rem 0;
+        .map-point:hover {
+            transform: scale(1.1);
         }
     </style>
 </head>
-<body class="pb-24">
+<body class="text-gray-800">
 
-    <!-- Header -->
-    <header class="bg-[#588157] text-white py-16 px-4 text-center relative overflow-hidden">
-        <div class="relative z-10 container-custom">
-            <h1 class="text-3xl md:text-5xl font-bold mb-4 tracking-wide leading-tight">重返生命樹下<br>愛的初心</h1>
-            <p class="text-lg md:text-xl opacity-90 font-light mt-4">雅歌第一章．默想與整合退修</p>
-            <div class="mt-8 flex justify-center space-x-4 text-sm opacity-80">
-                <span class="flex items-center"><svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg> 時間：約 60 分鐘</span>
-                <span class="flex items-center"><svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg> 形式：個人默想 或 夫婦共修</span>
+    <!-- Navbar -->
+    <nav class="bg-purple-600 text-white p-4 shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-xl font-bold"><i class="fas fa-castle mr-2"></i>迪士尼幼兒半日遊</h1>
+            <button onclick="window.print()" class="no-print bg-white text-purple-700 px-4 py-2 rounded-full font-bold hover:bg-yellow-300 transition shadow-md">
+                <i class="fas fa-file-pdf mr-1"></i> 儲存為 PDF
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative bg-gradient-to-b from-purple-100 to-pink-50 pt-10 pb-16 text-center px-4">
+        <h2 class="text-3xl md:text-5xl font-bold text-purple-800 mb-2 disney-font">夢幻親子時光</h2>
+        <p class="text-lg text-gray-600 mb-6">專為 3 歲寶貝設計的溫和行程 (11:00 - 18:00)</p>
+        
+        <!-- Key Highlight Box -->
+        <div class="max-w-3xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden border-l-8 border-yellow-400">
+            <div class="p-6 md:flex items-center">
+                <div class="md:w-1/3 mb-4 md:mb-0">
+                    <img src="https://placehold.co/400x300/4F46E5/FFFFFF?text=Mickey's+PhilharMagic" alt="米奇幻想曲" class="rounded-lg shadow-md w-full object-cover">
+                </div>
+                <div class="md:w-2/3 md:pl-6 text-left">
+                    <h3 class="text-2xl font-bold text-indigo-700 mb-2">⭐ 重點推薦：米奇幻想曲</h3>
+                    <div class="grid grid-cols-2 gap-4 text-sm">
+                        <div class="bg-indigo-50 p-2 rounded">
+                            <i class="fas fa-clock text-indigo-500 mr-2"></i>
+                            <span class="font-bold">場次頻率：</span><br>每 10-15 分鐘一場 (循環演出)
+                        </div>
+                        <div class="bg-indigo-50 p-2 rounded">
+                            <i class="fas fa-snowflake text-indigo-500 mr-2"></i>
+                            <span class="font-bold">環境：</span><br>最強冷氣、4D 感官體驗
+                        </div>
+                    </div>
+                    <p class="text-gray-500 text-xs mt-2">📍 位置：幻想世界 | 💡 攻略：隨到隨排，適合下午避暑</p>
+                </div>
             </div>
         </div>
-        <!-- Abstract Tree Decoration -->
-        <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 w-[600px] h-[600px] bg-white/10 rounded-full blur-3xl"></div>
     </header>
 
-    <main class="container-custom -mt-8 relative z-20">
-
-        <!-- Introduction / Concept -->
-        <div class="card text-center">
-            <h2 class="text-2xl font-bold text-gray-800 mb-4">退修導言</h2>
-            <p class="text-gray-600 mb-6 text-justify">
-                神設立關係與婚姻的初衷，是要我們如同在伊甸園的「生命樹」下，充滿生機、連結與祝福。然而，生活中的勞苦、誤解與自我保護，常使我們不知不覺走向了「分別善惡樹」——充滿了對錯的爭辯、判斷與疏離。
-                <br><br>
-                本次退修旨在帶領你的心，透過《雅歌》第一章的啟示，從枯乾的爭論中轉回，重拾那份單純、熱情且具安全感的「起初之愛」。
-            </p>
-            <div class="text-sm text-gray-500 bg-gray-50 py-2 rounded">
-                準備事項：一本聖經、一顆安靜的心、(選用)筆記本
-            </div>
-        </div>
-
-        <!-- Session 1 -->
-        <div class="card">
-            <span class="step-badge">第一部：愛的重現</span>
-            <h2 class="text-2xl font-bold text-gray-800 mb-2">坦誠的渴慕與需要</h2>
-            
-            <div class="scripture-box scripture-text">
-                「願他用口與我親嘴，因你的愛情比酒更美。……願你吸引我，我們就快跑跟隨你。」<br>
-                (雅歌 1:2, 4)
-            </div>
-
-            <div class="insight-box">
-                <div class="insight-title">
-                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                    信息導讀：打破「相敬如賓」的迷思
+    <!-- Main Content Grid -->
+    <main class="container mx-auto px-4 py-8">
+        
+        <!-- Interactive Map Visualization -->
+        <section class="mb-16 map-container">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-8"><i class="fas fa-map-marked-alt text-pink-500 mr-2"></i>行程地圖概覽</h2>
+            <div class="relative bg-green-50 rounded-3xl p-4 border-4 border-green-200 aspect-[16/9] md:aspect-[2/1] overflow-hidden max-w-4xl mx-auto shadow-inner">
+                <!-- Map Background Elements -->
+                <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#6B7280 1px, transparent 1px); background-size: 20px 20px;"></div>
+                
+                <!-- Castle Center -->
+                <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center z-10">
+                    <i class="fas fa-chess-rook text-6xl text-pink-400 opacity-80"></i>
+                    <p class="font-bold text-pink-600">城堡</p>
                 </div>
-                <p class="mb-3 text-sm text-gray-700">
-                    《雅歌》的開篇既直接又強烈。這提醒我們，健康的愛不應只是冷靜的責任或客氣的「相敬如賓」。愛，需要表達。
-                </p>
-                <p class="text-sm text-gray-700">
-                    <strong>「我需要你需要我」</strong>是一個核心概念。這不是情緒勒索，而是一種客觀的請求與空間的敞開。就像神不僅給予愛，神也表達祂渴望與人互動；在婚姻與關係中，我們需要承認「我有缺乏，而你的存在能填補這份缺乏」。坦承軟弱與渴望，是重燃愛火的第一步。
-                </p>
-            </div>
 
-            <h3 class="text-lg font-bold text-[#588157] mt-6">默想與反思</h3>
-            <p class="text-gray-600 mt-2">
-                1. 檢視你的關係（與神或與配偶），是否因怕受傷而隱藏了真實的期待？<br>
-                2. 試著寫下一句表達「需要」的話，不是指責對方沒做到什麼，而是單純表達你對連結的渴望。
-            </p>
-            <textarea class="reflection-input" placeholder="主啊/親愛的，其實我很需要你... 我渴望我們之間能夠..."></textarea>
-        </div>
-
-        <!-- Session 2 -->
-        <div class="card">
-            <span class="step-badge">第二部：愛的接納</span>
-            <h2 class="text-2xl font-bold text-gray-800 mb-2">黑與秀美的張力</h2>
-
-            <div class="scripture-box scripture-text">
-                「耶路撒冷的眾女子啊，我雖然黑，卻是秀美，如同基達的帳棚，好像所羅門的幔子。」<br>
-                (雅歌 1:5)
-            </div>
-
-            <div class="insight-box">
-                <div class="insight-title">
-                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                    信息導讀：擁抱真實的自我價值
+                <!-- Locations -->
+                <!-- 1. Fantasyland -->
+                <div class="absolute top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center map-point cursor-pointer">
+                    <div class="bg-purple-600 text-white w-8 h-8 rounded-full flex items-center justify-center mx-auto shadow-lg border-2 border-white font-bold">1</div>
+                    <div class="bg-white px-2 py-1 rounded text-xs font-bold shadow mt-1 whitespace-nowrap">幻想世界<br>(小小世界/旋轉木馬)</div>
                 </div>
-                <p class="mb-3 text-sm text-gray-700">
-                    經文中的女子面對一個張力：她是<strong>「黑」</strong>的（像遊牧民族基達的帳棚，經歷風吹日曬、粗糙、甚至帶著羞恥與勞苦），但她同時宣告自己是<strong>「秀美」</strong>的（像所羅門聖殿的幔子，尊貴、細緻、有神的榮美）。
-                </p>
-                <p class="text-sm text-gray-700">
-                    在關係中，我們常因自卑（覺得自己不夠好、有原生家庭的傷痕）而退縮，或戴上面具。但「愛」的前提是接納本相。神看見你的黑，卻仍稱你為秀美。唯有當我們用神的眼光接納自己這顆「黑珍珠」的獨特價值時，我們才能健康地去愛，也能安心地被愛。
-                </p>
-            </div>
 
-            <h3 class="text-lg font-bold text-[#588157] mt-6">默想與反思</h3>
-            <p class="text-gray-600 mt-2">
-                1. 誠實面對自己：目前有哪個部分的你，讓你覺得是「黑」的（不想讓人看見、覺得羞恥或不完美）？<br>
-                2. 在禱告中，求神讓你看見這部分在祂眼中的「秀美」。寫下神對你價值的肯定。
-            </p>
-            <textarea class="reflection-input" placeholder="我感到自己的「黑」是在... 但神/愛卻告訴我，我是「秀美」的，因為..."></textarea>
-        </div>
-
-        <!-- Session 3 -->
-        <div class="card">
-            <span class="step-badge">第三部：愛的盟約</span>
-            <h2 class="text-2xl font-bold text-gray-800 mb-2">刻意的經營與肯定</h2>
-
-            <div class="scripture-box scripture-text">
-                「我心所愛的啊，求你告訴我，你在何處牧羊？... 我的佳偶，我將你比法老車上套的駿馬。... 我們以青翠樹為房屋的棟梁，以香柏樹為房屋的椽子。」<br>
-                (雅歌 1:7, 9, 17)
-            </div>
-
-            <div class="insight-box">
-                <div class="insight-title">
-                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                    信息導讀：方向感與建造
+                <!-- 2. Banquet Hall -->
+                <div class="absolute top-1/3 left-[65%] text-center map-point">
+                    <div class="bg-yellow-500 text-white w-8 h-8 rounded-full flex items-center justify-center mx-auto shadow-lg border-2 border-white font-bold">2</div>
+                    <div class="bg-white px-2 py-1 rounded text-xs font-bold shadow mt-1 whitespace-nowrap">皇室宴會廳</div>
                 </div>
-                <p class="mb-3 text-sm text-gray-700">
-                    <strong>「你在何處牧羊？」</strong>反映了愛需要有「方向感」。這代表著對另一半生活的關注、尋找與連結，不讓對方在關係中迷失（像蒙著臉的人）。
-                </p>
-                <p class="mb-3 text-sm text-gray-700">
-                    <strong>「法老車上的駿馬」與「金辮」</strong>象徵著透過言語和行動來「肯定」與「讚賞」對方。互相肯定（Affirmation）是關係中極為重要的禮物，能為對方建立自信。
-                </p>
-                <p class="text-sm text-gray-700">
-                    最後，<strong>「香柏樹為棟梁」</strong>提醒我們，成熟的愛是需要「經營」與「建造」的。它不只是一時的激情，而是像堅固的房屋結構，能抵擋風雨，甚至傳承給下一代，成為安穩的歸宿。
-                </p>
+
+                <!-- 3. PhilharMagic -->
+                <div class="absolute top-[40%] left-[35%] text-center map-point">
+                    <div class="bg-indigo-600 text-white w-8 h-8 rounded-full flex items-center justify-center mx-auto shadow-lg border-2 border-white font-bold">3</div>
+                    <div class="bg-white px-2 py-1 rounded text-xs font-bold shadow mt-1 whitespace-nowrap text-indigo-700">米奇幻想曲</div>
+                </div>
+
+                <!-- 4. Adventureland -->
+                <div class="absolute bottom-1/4 left-[20%] text-center map-point">
+                    <div class="bg-green-600 text-white w-8 h-8 rounded-full flex items-center justify-center mx-auto shadow-lg border-2 border-white font-bold">4</div>
+                    <div class="bg-white px-2 py-1 rounded text-xs font-bold shadow mt-1 whitespace-nowrap">探險世界<br>(森林河流)</div>
+                </div>
+
+                <!-- 5. Toy Story -->
+                <div class="absolute top-[20%] left-[15%] text-center map-point">
+                    <div class="bg-orange-500 text-white w-8 h-8 rounded-full flex items-center justify-center mx-auto shadow-lg border-2 border-white font-bold">5</div>
+                    <div class="bg-white px-2 py-1 rounded text-xs font-bold shadow mt-1 whitespace-nowrap">反斗奇兵<br>(彈弓狗)</div>
+                </div>
+
+                <!-- 6. Main Street -->
+                <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-center map-point">
+                    <div class="bg-blue-600 text-white w-8 h-8 rounded-full flex items-center justify-center mx-auto shadow-lg border-2 border-white font-bold">6</div>
+                    <div class="bg-white px-2 py-1 rounded text-xs font-bold shadow mt-1 whitespace-nowrap">美國小鎮大街</div>
+                </div>
+            </div>
+            <p class="text-center text-gray-500 text-sm mt-4">此地圖為相對位置示意圖，請配合官方 APP 使用</p>
+        </section>
+
+        <!-- Timeline -->
+        <div class="relative max-w-4xl mx-auto">
+            <div class="timeline-line md:block hidden"></div>
+
+            <!-- Item 1 -->
+            <div class="mb-8 flex justify-between flex-col md:flex-row items-center w-full">
+                <div class="order-1 md:w-5/12"></div>
+                <div class="z-20 flex items-center order-1 bg-purple-600 shadow-xl w-12 h-12 rounded-full justify-center text-white font-bold text-lg mb-4 md:mb-0">
+                    11:00
+                </div>
+                <div class="order-1 md:w-5/12 bg-white rounded-xl shadow-lg px-6 py-4 card w-full">
+                    <h3 class="font-bold text-gray-800 text-xl mb-3">🏰 幻想世界：溫和啟航</h3>
+                    <img src="https://placehold.co/600x300/e0b0ff/ffffff?text=It's+a+Small+World+%2B+Carousel" class="w-full h-32 object-cover rounded-lg mb-3" alt="小小世界與旋轉木馬">
+                    <ul class="text-sm text-gray-600 space-y-2">
+                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i><b>小小世界</b>：3歲最愛，坐船吹冷氣，無離心力。</li>
+                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i><b>灰姑娘旋轉木馬</b>：經典打卡位，速度緩慢。</li>
+                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i><b>小飛象旋轉世界</b>：可自行控制高低。</li>
+                    </ul>
+                </div>
             </div>
 
-            <h3 class="text-lg font-bold text-[#588157] mt-6">默想與反思</h3>
-            <p class="text-gray-600 mt-2">
-                1. 具體行動：你可以如何表達對另一半（或家人）生活方向的關注？<br>
-                2. 肯定練習：請寫下三個你欣賞對方的特質，或回想神在你生命中堅定的建造。
-            </p>
-            <textarea class="reflection-input" placeholder="我要肯定對方/感謝神的地方是... 我願意為這段關係付出的經營是..."></textarea>
+            <!-- Item 2 -->
+            <div class="mb-8 flex justify-between flex-col md:flex-row-reverse items-center w-full">
+                <div class="order-1 md:w-5/12"></div>
+                <div class="z-20 flex items-center order-1 bg-yellow-500 shadow-xl w-12 h-12 rounded-full justify-center text-white font-bold text-lg mb-4 md:mb-0">
+                    12:30
+                </div>
+                <div class="order-1 md:w-5/12 bg-white rounded-xl shadow-lg px-6 py-4 card w-full">
+                    <h3 class="font-bold text-gray-800 text-xl mb-3">🍴 午餐：皇室宴會廳</h3>
+                    <img src="https://placehold.co/600x300/fcd34d/ffffff?text=Royal+Banquet+Hall" class="w-full h-32 object-cover rounded-lg mb-3" alt="皇室宴會廳">
+                    <p class="text-sm text-gray-600 mb-2">米奇幻想曲對面。城堡風格室內環境，冷氣充足。</p>
+                    <div class="bg-yellow-50 p-2 rounded text-xs text-yellow-800">
+                        <i class="fas fa-utensils mr-1"></i> 推薦：日式拉麵、皇室焗飯 (份量足夠親子分食)
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="mb-8 flex justify-between flex-col md:flex-row items-center w-full">
+                <div class="order-1 md:w-5/12"></div>
+                <div class="z-20 flex items-center order-1 bg-indigo-600 shadow-xl w-12 h-12 rounded-full justify-center text-white font-bold text-lg mb-4 md:mb-0">
+                    13:45
+                </div>
+                <div class="order-1 md:w-5/12 bg-white rounded-xl shadow-lg px-6 py-4 card border-l-4 border-indigo-500 w-full">
+                    <h3 class="font-bold text-indigo-700 text-xl mb-3">🎬 必看：米奇幻想曲 (4D)</h3>
+                    <img src="https://placehold.co/600x300/4338ca/ffffff?text=Mickey's+PhilharMagic+Show" class="w-full h-32 object-cover rounded-lg mb-3" alt="米奇幻想曲">
+                    <p class="text-sm text-gray-600 mb-2">全家休息的最佳時間。戴上 3D 眼鏡，感受唐老鴨帶來的魔法。</p>
+                    <div class="flex items-center text-xs bg-indigo-100 text-indigo-800 p-2 rounded">
+                        <i class="fas fa-info-circle mr-2"></i>
+                        <span>每 10-15 分鐘一場，無需提早太久排隊。</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="mb-8 flex justify-between flex-col md:flex-row-reverse items-center w-full">
+                <div class="order-1 md:w-5/12"></div>
+                <div class="z-20 flex items-center order-1 bg-pink-500 shadow-xl w-12 h-12 rounded-full justify-center text-white font-bold text-lg mb-4 md:mb-0">
+                    15:00
+                </div>
+                <div class="order-1 md:w-5/12 bg-white rounded-xl shadow-lg px-6 py-4 card w-full">
+                    <h3 class="font-bold text-gray-800 text-xl mb-3">🎉 巡遊與表演</h3>
+                    <img src="https://placehold.co/600x300/ec4899/ffffff?text=Disney+Parade" class="w-full h-32 object-cover rounded-lg mb-3" alt="迪士尼巡遊">
+                    <p class="text-sm text-gray-600">前往 **城堡前方** 或 **美國小鎮大街**。</p>
+                    <p class="text-xs text-red-500 mt-1 font-bold"><i class="fas fa-exclamation-triangle mr-1"></i>請提前 20 分鐘打開 App 確認當日確切時間。</p>
+                </div>
+            </div>
+
+            <!-- Item 5 -->
+            <div class="mb-8 flex justify-between flex-col md:flex-row items-center w-full">
+                <div class="order-1 md:w-5/12"></div>
+                <div class="z-20 flex items-center order-1 bg-green-600 shadow-xl w-12 h-12 rounded-full justify-center text-white font-bold text-lg mb-4 md:mb-0">
+                    16:00
+                </div>
+                <div class="order-1 md:w-5/12 bg-white rounded-xl shadow-lg px-6 py-4 card w-full">
+                    <h3 class="font-bold text-gray-800 text-xl mb-3">🌳 探險與反斗世界</h3>
+                    <div class="flex space-x-2 mb-3">
+                         <img src="https://placehold.co/300x200/059669/ffffff?text=Jungle+River" class="w-1/2 h-20 object-cover rounded" alt="森林河流">
+                         <img src="https://placehold.co/300x200/f97316/ffffff?text=Slinky+Dog" class="w-1/2 h-20 object-cover rounded" alt="彈弓狗">
+                    </div>
+                    <ul class="text-sm text-gray-600 space-y-2">
+                        <li><i class="fas fa-map-marker-alt text-green-500 mr-2"></i><b>森林河流之旅</b>：看噴水大象，船長講解幽默。</li>
+                        <li><i class="fas fa-map-marker-alt text-orange-500 mr-2"></i><b>轉轉彈弓狗</b>：反斗奇兵區最溫和設施，平穩有趣。</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Item 6 -->
+            <div class="mb-8 flex justify-between flex-col md:flex-row-reverse items-center w-full">
+                <div class="order-1 md:w-5/12"></div>
+                <div class="z-20 flex items-center order-1 bg-blue-600 shadow-xl w-12 h-12 rounded-full justify-center text-white font-bold text-lg mb-4 md:mb-0">
+                    17:30
+                </div>
+                <div class="order-1 md:w-5/12 bg-white rounded-xl shadow-lg px-6 py-4 card w-full">
+                    <h3 class="font-bold text-gray-800 text-xl mb-3">🛍️ 美國小鎮大街</h3>
+                    <img src="https://placehold.co/600x300/2563eb/ffffff?text=Main+Street+USA" class="w-full h-32 object-cover rounded-lg mb-3" alt="美國小鎮大街">
+                    <p class="text-sm text-gray-600">最後的購物時間！購買氣球、米奇耳朵。</p>
+                    <p class="text-sm text-purple-600 font-bold mt-2">📸 必做：在晚霞中的城堡前拍全家福。</p>
+                </div>
+            </div>
+
         </div>
 
-        <!-- Closing Prayer -->
-        <div class="card bg-[#588157] text-white">
-            <h2 class="text-2xl font-bold mb-4">立志與結束禱告</h2>
-            <p class="mb-6 opacity-90">
-                請用這段禱告文結束這段退修時光，將你的渴望、自我接納與對關係的承諾交在神手中。
-            </p>
-            <div class="bg-white/10 p-6 rounded-lg border border-white/20 font-serif leading-loose tracking-wide">
-                <p class="mb-4">
-                    親愛的天父，感謝祢帶領我回到生命樹下，看見愛原本的樣式。
-                </p>
-                <p class="mb-4">
-                    主啊，我承認有時我活在分別善惡的樹下，急於爭辯對錯，卻失去了愛的連結。求祢赦免我，幫助我重拾起初的愛心。
-                    求祢醫治我內心覺得「黑」與羞恥的地方，讓我深信在祢眼中我是「秀美」且尊貴的，使我有安全感去愛人，也有勇氣表達我的需要。
-                </p>
-                <p>
-                    願我們的關係像香柏樹的棟梁一樣堅固。求祢教導我如何用言語肯定我的家人與配偶，如何在生活中刻意經營愛。
-                    奉耶穌基督的名禱告，阿們。
-                </p>
+        <!-- Checklist -->
+        <section class="mt-12 bg-white p-6 rounded-2xl shadow-lg no-print">
+            <h3 class="text-xl font-bold mb-4 text-center">🎒 爸媽必備清單</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="flex items-center p-3 bg-gray-50 rounded-lg">
+                    <i class="fas fa-baby-carriage text-2xl text-pink-500 mr-3"></i>
+                    <div>
+                        <p class="font-bold">租借嬰兒車</p>
+                        <p class="text-xs text-gray-500">入口左側，約 HK$150/天</p>
+                    </div>
+                </div>
+                <div class="flex items-center p-3 bg-gray-50 rounded-lg">
+                    <i class="fas fa-tint text-2xl text-blue-500 mr-3"></i>
+                    <div>
+                        <p class="font-bold">自備水壺</p>
+                        <p class="text-xs text-gray-500">園區內有多處飲水機</p>
+                    </div>
+                </div>
+                <div class="flex items-center p-3 bg-gray-50 rounded-lg">
+                    <i class="fas fa-mobile-alt text-2xl text-purple-500 mr-3"></i>
+                    <div>
+                        <p class="font-bold">下載官方 APP</p>
+                        <p class="text-xs text-gray-500">查閱即時排隊時間</p>
+                    </div>
+                </div>
             </div>
-            
-            <div class="mt-8 text-center">
-                <button onclick="window.print()" class="bg-white text-[#588157] px-6 py-2 rounded-full font-bold hover:bg-gray-100 transition shadow-lg">
-                    下載/列印 這份筆記
-                </button>
-            </div>
-        </div>
+        </section>
 
     </main>
 
-    <footer class="bg-[#2f3e46] text-gray-400 py-8 text-center text-sm">
-        <p>Copyright © 2026 退修靈修指引 | 基於雅歌第一章經文默想</p>
+    <footer class="bg-gray-800 text-white text-center py-6 mt-12 no-print">
+        <p class="text-sm opacity-70">祝您和寶貝在香港迪士尼度過奇妙的一天！✨</p>
+        <p class="text-xs opacity-50 mt-2">Disclaimer: This is a suggested itinerary guide. Please refer to the official HK Disneyland App for real-time schedules.</p>
     </footer>
 
 </body>
